@@ -6,11 +6,12 @@ import { LoginService } from './login/login.service';
 import { LoginModule } from './login/login.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+require('dotenv').config();
 
 @Module({
   imports: [
-   
-    MongooseModule.forRoot('mongodb://login:123@localhost:27017/login'),
+    // 'mongodb://login:123@localhost:27017/login'
+    MongooseModule.forRoot(process.env.MONGO_URI),
      LoginModule],
   controllers: [AppController],
   providers: [AppService],
