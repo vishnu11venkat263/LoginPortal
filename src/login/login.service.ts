@@ -14,8 +14,7 @@ export class LoginService {
   async userCreate(body) {
     let formData = {};
     formData['title'] = body['title'];
-    formData['firstName'] = body['firstName'];
-    formData['lastName'] = body['lastName'];
+    formData['userName'] = body['userName'];
     formData['mailId'] = body['mailId'];
     formData['mobileNumber'] = body['mobileNumber'];
     formData['password'] = body['password'];

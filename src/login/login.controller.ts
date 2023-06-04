@@ -11,9 +11,6 @@ export class LoginController {
 
  @Post('createUser')
 async loginUser(@Body() body,@Res() res){
-    console.log("body",body);
-    
-    let returnObjects = {};
      let data = await this.loginService.userCreate(body);
      return  res.json(data);
 }
