@@ -4,8 +4,7 @@ import mongoose from "mongoose";
 export interface IcreateUser extends mongoose.Document{
 
     title:String;
-    firstName:String;
-    lastName:String;
+   userName:String;
     mailId:String;
     mobileNumber:Number;
     password:String;
@@ -13,8 +12,7 @@ export interface IcreateUser extends mongoose.Document{
 
 export const createUserInfoSchema = new mongoose.Schema({
     title:{ type :String},
-    firstName:{ type :String},
-    lastName:{ type :String},
+    userName:{ type :String},
     mailId:{ type :String},
     mobileNumber:{ type :Number},
     password:{ type :String},
