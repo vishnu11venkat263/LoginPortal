@@ -1,6 +1,6 @@
 import { Body, Controller, Post, Res } from '@nestjs/common';
 import { LoginService } from './login.service';
-import { log } from 'console';
+
 
 @Controller('login')
 export class LoginController {
@@ -11,6 +11,8 @@ export class LoginController {
 
  @Post('createUser')
 async loginUser(@Body() body,@Res() res){
+    console.log("body",body);
+    
     let returnObjects = {};
      let data = await this.loginService.userCreate(body);
      return  res.json(data);
