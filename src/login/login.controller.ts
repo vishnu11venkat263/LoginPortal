@@ -10,8 +10,14 @@ export class LoginController {
     ){}
 
  @Post('createUser')
-async loginUser(@Body() body,@Res() res){
+async userCreate(@Body() body,@Res() res){
      let data = await this.loginService.userCreate(body);
+     return  res.json(data);
+}
+
+@Post('signIn')
+async loginUser(@Body() body,@Res() res){
+     let data = await this.loginService.loginUser(body);
      return  res.json(data);
 }
     
